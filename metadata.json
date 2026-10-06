@@ -1,0 +1,9 @@
+{
+  "name": "Remix Projet-Pilote: Gestionnaire de Tâches",
+  "description": "Une application web pour la gestion de projets et de tâches. Visualisez vos flux de travail avec un tableau Kanban, suivez la date de clôture des tâches terminées, gérez les notes de suivi et analysez vos progrès avec un tableau de bord dynamique.",
+  "requestFramePermissions": [],
+  "prompt": "",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

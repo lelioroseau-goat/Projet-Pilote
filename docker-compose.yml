@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Application Web Frontend
+  app:
+    build: .
+    container_name: project_manager_app
+    restart: unless-stopped
+    ports:
+      - "8080:80"  # Accessible sur http://<IP-DE-VOTRE-LAB>:8080
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=production
+
+  # Base de données PostgreSQL locale pour le Lab
+  postgres:
+    image: postgres:16-alpine
+    container_name: project_manager_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: project_hub
+      POSTGRES_USER: lab_admin
+      POSTGRES_PASSWORD: SecretLabPassword123!
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+    driver: local
